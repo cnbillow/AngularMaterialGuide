@@ -64,3 +64,46 @@ const routes: Routes = [
 ```
 
 ### Step 5: Moduleとhtmlに使用するMaterialコントロールを追加
+
+`dashboard.module.ts`に、使用するMaterialコントロールの定義をソースに追加します。
+`DashboardComponent`の定義も追加して、htmlにMaterialのタグを使用できます。
+
+#### dashboard.module.ts
+```ts
+import { MatButtonModule, MatCardModule, MatIconModule, } from '@angular/material';
+import { DashboardComponent } from './dashboard.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    MatButtonModule, MatCardModule, MatIconModule,
+  ],
+  exports: [
+    MatButtonModule, MatCardModule, MatIconModule,
+  ],
+  declarations: [
+    DashboardComponent,
+  ]
+})
+```
+
+#### dashboard.component.html
+
+```html
+  <mat-card class="dashboard-card">
+    <mat-card-subtitle>
+        データ連携
+    </mat-card-subtitle>
+    <mat-card-title>
+        DataSpider Servistaの新機能
+    </mat-card-title>
+    <mat-card-content>
+        業務自動化を阻む多く残る紙データでの業務処理。....  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>いいね！</button>
+      <button mat-button>コメントする</button>
+      <button mat-button>シェアする</button>
+    </mat-card-actions>
+  </mat-card>
+```

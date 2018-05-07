@@ -19,7 +19,7 @@ Angular Materialのインストールを[こっち](./material-started.md)をご
 
 ### Angular Materialの構成
 
-1. Angular Material
+1. [Angular Material Sidenavで全体像を作成](./material-sidenav.md) 
 
 
 
