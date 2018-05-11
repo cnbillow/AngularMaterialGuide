@@ -1,0 +1,18 @@
+<mat-list>
+  
+  <div *ngFor="let host of hosts; last as l; index as i"
+      draggable="true"
+      (dragstart)="onDragStart($event)"      
+      (dragover)="onDragOver($event)"
+      (drop)="onDrop($event)"> 
+      <mat-list-item>
+       {{host.hostName}}
+      </mat-list-item>
+      <mat-divider *ngIf="!l"></mat-divider>
+  </div>
+ 
+</mat-list>
+<!-- <div (drop)="onDrop($event)"  (dragover)="allowDrop($event)">
+<p>　この区域にドロップしてみ</p>
+
+</div> -->

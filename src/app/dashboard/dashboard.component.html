@@ -1,0 +1,152 @@
+<div class="dashboard-card-cols-both">
+この画面、Angular 2 Drag-and-Dropで実装してみました。
+npm install ng2-dnd --save
+<p>総評：</p>
+<ul>
+  <li>dnd-sortable と dnd-draggable 共有できない。順番並びとドロップできない。。。。</li>
+  <li>dnd-draggable-handle (「=」をドラッグするもののような)  複数定義できない。。。。</li>
+</ul>
+</div>
+<div dnd-sortable-container [sortableData]="cards"> 
+  <p>下記カードを順番並べます。</p>
+  <div *ngFor="let card of cards; index as i" class="dashboard-card-cols"
+        dnd-sortable [sortableIndex]="i" >  
+        <mat-card class="dashboard-card">
+            <mat-card-title-group>
+              <mat-card-title>
+                  {{card.title}}
+              </mat-card-title>
+              <mat-card-subtitle>
+                  {{card.summay}}
+              </mat-card-subtitle>
+              <img mat-card-md-image class="image-in-card" [src]="getImageUrl(card)" />
+            </mat-card-title-group>
+        </mat-card>
+  </div>
+</div>
+<div> 
+    <p>下記カードを下の区域にドロップできます。。</p>
+    <div *ngFor="let card of cards; index as i" class="dashboard-card-cols"  
+          dnd-draggable [dragEnabled]="true"
+          [dropZones]="['zone2']"
+          [dragData]="card" > 
+      <mat-card class="dashboard-card">
+        <mat-card-title-group>
+          <mat-card-title>
+              <span dnd-draggable-handle>=</span>&nbsp; {{card.title}}
+          </mat-card-title>
+          <mat-card-subtitle>
+              {{card.summay}}
+          </mat-card-subtitle>
+          <!-- <iframe mat-card-md-image class="image-in-card" frameborder="0"
+              ></iframe> -->
+          <img mat-card-md-image class="image-in-card" [src]="getImageUrl(card)" />
+        </mat-card-title-group>
+      </mat-card>
+  </div>
+</div>
+
+<div dnd-droppable class="drop-canvas" 
+    [dropZones]="['zone2']"
+    (onDragEnter)="simpleDrop=$event"  
+    (onDropSuccess)="onDropCard($event)">
+    <p> 下記区域にドロップしてください。 </p>
+    <p *ngIf="simpleDrop">{{simpleDrop.dragData.title}}をドロップしている。</p>
+    <div *ngFor="let card of dropcards; index as j" 
+       class="dashboard-card-cols">
+        <mat-card class="dashboard-card">
+          <mat-card-title-group>
+            <mat-card-title>
+              {{card.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{card.summay}}
+            </mat-card-subtitle>
+         </mat-card-title-group>
+        </mat-card>
+    </div>
+</div>
+<!-- <div *ngFor="let card of cards; index as i" class="dashboard-card-cols"
+      dnd-draggable [dragEnabled]="true"
+      [dragData]="card" (onDragSuccess)="orderedCard($event)" >
+    <mat-card class="dashboard-card">
+      <mat-card-title-group>
+        <mat-card-title>
+          {{card.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{card.summay}}
+        </mat-card-subtitle>
+        <img mat-card-md-image class="image-in-card" src=" {{card.imgsrc}}" />
+      </mat-card-title-group>
+    </mat-card>
+</div> -->
+<!-- 
+<div class="dashboard-card-cols" dnd-draggable [dragEnabled]="true">
+  <mat-card class="dashboard-card">
+    <mat-card-title-group>
+      <mat-card-title>
+        データ連携
+      </mat-card-title>
+      <mat-card-subtitle>
+          DataSpider Servista
+      </mat-card-subtitle>
+      <img mat-card-md-image class="image-in-card" src="https://www.hulft.com/application/files/5514/7886/1087/software-dataspider-index-fig-02.png" />
+    </mat-card-title-group>
+  </mat-card>
+</div>
+<div class="dashboard-card-cols" dnd-draggable [dragEnabled]="true">
+    <mat-card class="dashboard-card">
+      <mat-card-title-group>
+        <mat-card-title>
+          データ加工
+        </mat-card-title>
+        <mat-card-subtitle>
+            DataSpider Labs版
+        </mat-card-subtitle>
+        <img mat-card-md-image class="image-in-card" src="https://www.hulft.com/application/files/6114/7886/1087/software-dataspider-index-fig-03.png" />
+      </mat-card-title-group>
+    </mat-card>
+  </div>
+<div class="dashboard-card-cols-both" dnd-draggable [dragEnabled]="true"  dnd-droppable (onDropSuccess)="simpleDrop=$event">
+    <mat-card class="dashboard-card">
+        <mat-card-header>
+          <div mat-card-avatar class="dashboard-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <div *ngIf="simpleDrop">Item was dropped here</div>
+        <img mat-card-image src="https://www.hulft.com/application/files/8215/2203/0651/dss-labs-index-fig-01.png" alt="Photo of a Shiba Inu">
+        <mat-card-actions>
+            <button mat-icon-button color="primary">
+                <mat-icon aria-label="LIKE">plus_one</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon aria-label="SHARE">share</mat-icon>
+            </button>
+          </mat-card-actions>
+         <mat-card-content>
+          <p>
+              業務自動化を阻む多く残る紙データでの業務処理。そうした紙データをデジタル処理化する技術「OCR(光学的文字認識)」への関心が高まっています。 Tegakiは、AI技術を活用、学習を繰り返すことで読み取り精度を継続的に向上させることができるOCRサービスです。          </p>
+        </mat-card-content>
+      </mat-card>
+</div>
+
+<div class="dashboard-card-cols" dnd-draggable [dragEnabled]="true">
+  <mat-card class="dashboard-card">
+    <mat-card-subtitle>
+        データ連携
+    </mat-card-subtitle>
+    <mat-card-title>
+        DataSpider Servistaの新機能
+    </mat-card-title>
+    <mat-card-content>
+        業務自動化を阻む多く残る紙データでの業務処理。そうした紙データをデジタル処理化する技術「OCR(光学的文字認識)」への関心が高まっています。 Tegakiは、AI技術を活用、学習を繰り返すことで読み取り精度を継続的に向上させることができるOCRサービスです。
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>いいね！</button>
+      <button mat-button>コメントする</button>
+      <button mat-button>シェアする</button>
+    </mat-card-actions>
+  </mat-card>
+</div> -->

@@ -1,0 +1,64 @@
+
+<div class="example-container">
+
+  <mat-sidenav-container class="example-sidenav-container" >
+    
+    <mat-sidenav #snav mode="over" class="example-sidenav"> 
+      <app-side-menu></app-side-menu>
+        <!--
+        <button mat-icon-button class="sidenav-back-button">    
+          <mat-icon aria-label="Show Menu" (click)="snav.close()">arrow_back</mat-icon>     
+        </button>
+        <button mat-button routerLink="/home" (click)="snav.close()" class="sidenav-nav-button">
+          Home
+        </button>
+        <button mat-button routerLink="/dashboard" (click)="snav.close()" class="sidenav-nav-button">
+          Dashboard
+        </button> -->
+        
+    </mat-sidenav> 
+
+    <mat-sidenav-content>
+        <!--
+        <button type="button" mat-button (click)="snav.toggle()">
+            Toggle sidenav
+        </button>
+        -->
+
+        <mat-toolbar>
+  
+            <mat-toolbar-row ng-reflect-color="primary">
+           
+              
+              <button mat-icon-button>    
+                <mat-icon aria-label="Show Menu" (click)="snav.toggle()">menu</mat-icon>     
+              </button>
+              <h1 class="example-fill-remaining-space example-app-name">Director Demo</h1>    
+              <button mat-icon-button color="primary">
+                <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+              </button>
+              <button mat-icon-button color="primary">
+                <mat-icon aria-label="user icon">account_box</mat-icon>
+              </button>
+            </mat-toolbar-row>
+            <!--
+            <mat-toolbar-row>
+              <span>Link:</span>
+              <div class="example-fill-remaining-space">
+                <button mat-button routerLink="/home">Home</button>
+              </div>
+              <span>Right?</span>
+            </mat-toolbar-row>
+            -->
+        
+          
+        </mat-toolbar>
+        
+        <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+
+ </mat-sidenav-container>
+
+ 
+</div>

@@ -1,0 +1,29 @@
+.dashboard-card-cols {
+    float: left;  
+    margin: 20px;
+}
+.dashboard-card-cols-both {
+    clear: both;
+    margin: 20px;
+}
+.dashboard-card {
+    max-width: 400px;
+}
+.dashboard-header-image {
+    background-image: url('https://www.hulft.com/application/files/8215/2203/0651/dss-labs-index-fig-01.png');
+    background-size: cover;
+}
+.image-in-card {
+    size: auto;
+}
+
+div {
+    float: left;
+    display : table;
+}
+.drop-canvas {
+    /*float : left;
+    display : table;*/
+    min-width : 400px;
+    min-height : 600px;
+}

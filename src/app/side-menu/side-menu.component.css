@@ -1,0 +1,16 @@
+.sidenav-back-button {
+    position: absolute;
+    top:10px;
+    left:10px;
+}
+.sidenav-nav-button {
+    min-width: 200px;
+    float: left;
+    position: relative;
+    top:60px;
+}
+
+.sidenav { 
+  display: flex;
+  flex-direction: column;
+}
