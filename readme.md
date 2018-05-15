@@ -10,16 +10,22 @@ Angular Material の構築ガイドライン.
 
 Angular環境の配置を[Angular CLI公式サイト](https://cli.angular.io/)をご参照ください。
 
-Angular Materialのインストールを[こっち](./guide/material-started.md)をご参照ください。
+Angular Materialのインストールを[こっち](./guide/material-start.md)をご参照ください。
 
 
 ### Angular構成内容
 
 1.[ModuleとComponent](./guide/app-module.md)
 
+2.[Attribute Directive](./guide/app-directive.md)
+
+
 ### Angular Materialの構成
 
 1. [Angular Material Sidenavで全体像を作成](./guide/material-sidenav.md) 
+    ナビゲーション関連するMenu、Sidenav、Toolbarの使用と記述
+
+2. [Tab](./guide/#)
 
 
 

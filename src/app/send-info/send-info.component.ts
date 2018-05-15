@@ -12,4 +12,7 @@ export class SendInfoComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDrop(event) {
+    console.log(event);
+  }
 }

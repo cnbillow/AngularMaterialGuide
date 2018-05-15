@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatListModule, } from '@angular/material';
 
 import { HostInfoComponent } from './host-info.component';
+import { HostInfoService } from './host-info.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { HostInfoComponent } from './host-info.component';
   ],
   declarations: [
     HostInfoComponent,
-  ]
+  ],
+  providers: [ HostInfoService ], //  Angular 内部のコンテナからの注入
 })
 export class HostInfoModule { }

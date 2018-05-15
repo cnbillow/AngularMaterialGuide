@@ -1,0 +1,55 @@
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+     <div>
+      <mat-accordion>
+        <mat-expansion-panel  *ngFor="let g of groups;">
+       
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  <div [controlDroppabled]="g"
+                  (onDrop)="addHostInGroup($event)" >
+                {{g.name}} 
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list role="list" [controlDroppabled]="g">
+              <mat-list-item role="listitem"
+                  *ngFor="let gh of g.hosts">
+                  <div [ngSwitch]="gh.os" >
+                    <mat-icon matListIcon *ngSwitchCase="0">desktop_windows</mat-icon>
+                    <mat-icon matListIcon *ngSwitchCase="1">computer</mat-icon>
+                    <mat-icon matListIcon *ngSwitchCase="2">computer</mat-icon>
+                    <mat-icon matListIcon *ngSwitchCase="3">tv</mat-icon>
+                    <mat-icon matListIcon *ngSwitchCase="4">storage</mat-icon>
+                    <mat-icon matListIcon *ngSwitchCase="5">phone_android</mat-icon>
+                    <mat-icon matListIcon *ngSwitchCase="6">phone_iphone</mat-icon>
+                
+                  
+                    {{gh.hostName}}
+                  </div>
+              </mat-list-item>
+            </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile >
+    <mat-list > 
+      <mat-list-item  *ngFor="let h of hosts; last as l" >
+        <div [ngSwitch]="h.os" [controlDraggabled]="h">
+          <mat-icon matListIcon *ngSwitchCase="0">desktop_windows</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="1">computer</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="2">computer</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="3">tv</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="4">storage</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="5">phone_android</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="6">phone_iphone</mat-icon>
+      
+        
+          {{h.hostName}}
+        </div>
+        <mat-divider *ngIf="!l"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,3 +1,9 @@
-<p>
-  工事中。。。。
-</p>
+<!-- <control-draggabled>  -->
+  <p [controlDraggabled]="1">
+   工事中。。。。
+  </p>
+  <p [controlDroppabled]="2" (onDrop)="onDrop($event)">
+    お待ちください。
+  </p>
+ <!-- </control-draggabled>  -->
+

@@ -2,6 +2,21 @@
 これから、Dashboardというモジュールを作成して、AngularのModuleとComponentの概念で新しい画面を作成します。
 
 **前提条件** [公式サイトチュートリアル](https://angular.io/tutorial/)の第7章まで理解します。
+**参照リンク** [公式サイトModuleの紹介](https://angular.io/guide/architecture-modules)をご参照ください。
+
+モジュール（Module）はライブラリのコレクションで、共通モジュール、機能モジュールなどを統一管理できます。基本原則として、-Class-の中に、機能を実装しませんので、Componentや、HTMLに使用するモジュールなど宣言します。
+
+declarations — components, directives, pipesなど NgModuleで定義したモジュールをこのコレクションに宣言します。プロジェクトごとに一回宣言しかできません。
+
+exports — 宣言したコレクションをほかのNgModuleで定義したモジュールやコンポ―ネットテンプレート（HTML）に使用できるため、エクスポートします。
+
+imports — ほかのモジュールからエクスポートしたモジュールやコンポ―ネットテンプレートを、該当モジュールに使用する場合、インポートして使用できます。
+
+providers — 提供されたサービスがグローバルコレクションに注入（永続？）して、アプリケーションに任意アクセスできるになります。
+
+bootstrap — メインアプリケーションが起動する時のビューを定義します。ルートモジュール(AppModule)のみ定義します。
+
+
 
 ### Step 1:  Componentを作成
 
@@ -107,3 +122,4 @@ import { DashboardComponent } from './dashboard.component';
     </mat-card-actions>
   </mat-card>
 ```
+

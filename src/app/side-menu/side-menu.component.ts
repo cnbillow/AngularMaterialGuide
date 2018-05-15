@@ -42,10 +42,11 @@ export class SideMenuComponent implements OnInit {
     this.sideMenus = [
       {id: 1 , name : "Home", link : '/home'},
       {id: 2 , name : "Dashboard", link : '/dashboard'},
-      {id: 3 , name : "Host Information", link : '/hostinfo'},
-      {id: 4 , name : "Send Information", link : '/sendinfo'},
-      {id: 5 , name : "Receive Information", link : '/sendinfo'},
-      {id: 6 , name : "Format Information", link : '/sendinfo'},
+      {id: 3 , name : "Group Information", link : '/group'},
+      {id: 4 , name : "Host Information", link : '/hostinfo'},
+      {id: 5 , name : "Send Information", link : '/sendinfo'},
+      {id: 6 , name : "Receive Information", link : '/sendinfo'},
+      {id: 7 , name : "Format Information", link : '/sendinfo'},
     ]
   }
 

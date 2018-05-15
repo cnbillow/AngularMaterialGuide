@@ -39,6 +39,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -50,108 +51,52 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 //import { SideMenuModule } from './side-menu/side-menu.module';
 //import { HostInfoComponent } from './host-info/host-info.component';
+// import { DragAndDropModule } from './core/drag-and-drop/drag-and-drop.module';
 import { HostInfoModule } from './host-info/host-info.module';
 import { SendInfoModule } from './send-info/send-info.module';
+import { GroupModule } from './group/group.module';
 
 //import { SendInfoComponent } from './send-info/send-info.component';
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
-    //SendInfoComponent,
-    //HostInfoComponent,
-    //DashboardComponent,
-   // AppHomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-
-    //DndModule.forRoot(),
-
     CdkTableModule,    
-
-    // MatAutocompleteModule,        
     MatButtonModule,
-    // MatButtonToggleModule,
-    // MatCardModule,
-    // MatCheckboxModule,
-    // MatChipsModule,
-    // MatDatepickerModule,
-    // MatDialogModule,
-    // MatDividerModule,
-    // MatExpansionModule,
-    // MatFormFieldModule,
-    // MatGridListModule,
     MatIconModule,
-    // MatInputModule,
-    // MatListModule,
-    // MatMenuModule,
-    // MatPaginatorModule,
-    // MatProgressBarModule,
-    // MatProgressSpinnerModule,
-    // MatRadioModule,
-    // MatRippleModule,
-    // MatSelectModule,
     MatSidenavModule,
-    // MatSlideToggleModule,
-    // MatSliderModule,
-    // MatSnackBarModule,
-    // MatSortModule,
-    // MatStepperModule,
-    //MatTableModule,
-    //MatTabsModule,
+   
     MatToolbarModule,
     MatTooltipModule,
-
-
     AppRoutingModule,
+    MatListModule,
     HomeModule,
     DashboardModule,
+    GroupModule,
     HostInfoModule,
     SendInfoModule,
-
-   
+    // DragAndDropModule,
   ],
   exports: [
     CdkTableModule,  
     
-    // MatAutocompleteModule,    
+
     MatButtonModule,
-    // MatButtonToggleModule,
-    // MatCardModule,
-    // MatCheckboxModule,
-    // MatChipsModule,
-    // MatDatepickerModule,
-    // MatDialogModule,
-    // MatDividerModule,
-    // MatExpansionModule,
-    // MatFormFieldModule,
-    // MatGridListModule,
+   
     MatIconModule,
-    // MatInputModule,
-    // MatListModule,
-    // MatMenuModule,
-    // MatPaginatorModule,
-    // MatProgressBarModule,
-    // MatProgressSpinnerModule,
-    // MatRadioModule,
-    // MatRippleModule,
-    // MatSelectModule,
     MatSidenavModule,
-    // MatSlideToggleModule,
-    // MatSliderModule,
-    // MatSnackBarModule,
-    // MatSortModule,
-    // MatStepperModule,
-    //MatTableModule,
-    //MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    
+    MatListModule,
+    // GroupModule,
+    // SendInfoModule,
+    // DragAndDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,30 +4,31 @@ import { HomeComponent } from './home.component';
 import { MatTabsModule, MatDividerModule } from '@angular/material';
 
 import { HomeService } from './home.service';
-import { TabDraggabledDirective } from '../core/tab-draggabled.directive';
-import { TabDroppabledDirective } from '../core/tab-droppabled.directive';
-import { TabDragDropService } from '../core/tab-drag-drop.service';
+import { DragAndDropModule } from '../core/drag-and-drop/drag-and-drop.module';
+
+// import { TabDraggabledDirective } from '../core/drag-and-drop/tab-draggabled.directive';
+// import { TabDroppabledDirective } from '../core/drag-and-drop/tab-droppabled.directive';
+// import { TabDragDropService } from '../core/tab-drag-drop.service';
 
 @NgModule({
   imports: [
     MatTabsModule,
     MatDividerModule,
     CommonModule,
-   
+    DragAndDropModule,
+    
   ],
   exports:[
-    MatTabsModule,
-    MatDividerModule,
+    // MatTabsModule,
+    // MatDividerModule,
     HomeComponent,
    
   ],
   declarations: [
     HomeComponent,
-    TabDraggabledDirective,
-    TabDroppabledDirective,
   ],
   providers : [
-    HomeService,TabDragDropService
+    HomeService,
   ]
 })
 export class HomeModule { }

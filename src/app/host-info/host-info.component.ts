@@ -12,7 +12,7 @@ import { ProviderAst } from '@angular/compiler';
   selector: 'app-host-info',
   templateUrl: './host-info.component.html',  
   styleUrls: ['./host-info.component.css'],
-  providers: [ HostInfoService ], //  Angular 内部のコンテナからの注入
+  //providers: [ HostInfoService ], //  Angular 内部のコンテナからの注入
 })
 export class HostInfoComponent implements OnInit {
 

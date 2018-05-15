@@ -2,16 +2,12 @@
 <mat-tab-group [(selectedIndex)]="activeTabIndex">
   <mat-tab  *ngFor="let prod of products; index as i;">
     <ng-template mat-tab-label>     
-      <!-- <div draggable="true"
-        (dragstart)="onDragStart($event)"
-        (dragover)="allowDrop($event)"
-      
-        > -->
-      <div [tabDraggabled]="prod"
+   
+      <div [tabDraggabled]="prod" 
            [tabDroppabled]="prod" 
            [tagetZones]="['zone01', 'zone2']"
            [zoneName]="'zone01'"
-           (tabDrop)="onTabDrop($event)">
+           (onDrop)="onTabDrop($event)">
         {{prod.id}} - {{prod.name}}
       </div>
     </ng-template>
@@ -24,20 +20,14 @@
   </mat-tab>
 </mat-tab-group>
 </div>
-<!--mat-tab-group-->
-<mat-divider></mat-divider>
-<div>
+<!-- 
+<mat-divider style="visibility: hidden;"></mat-divider>
+<div >
   <mat-tab-group>
-    <mat-tab>
+    <mat-tab >
       <ng-template mat-tab-label>     
-        <!-- <div draggable="true"
-          (dragstart)="onDragStart($event)"
-          (dragover)="allowDrop($event)"
-        
-          > -->
-        <div 
-        
-             [tabDraggabled]="'No1'"             
+     
+        <div [tabDraggabled]="'No1'"             
              [tagetZones]="['zone3', 'zone2']">
              No1 Drag This
         </div>
@@ -52,16 +42,12 @@
 
     <mat-tab>
       <ng-template mat-tab-label>     
-        <!-- <div draggable="true"
-          (dragstart)="onDragStart($event)"
-          (dragover)="allowDrop($event)"
-        
-          > -->
+     
         <div 
         [tabDroppabled]="'No2'"             
         [zoneName]="'zone2'"
-        (tabDrop)="onTab2Drop($event)"
-             [tabDraggabled]="null"             
+        (onDrop)="onTab2Drop($event)"
+        [tabDraggabled]="null"             
              [tagetZones]="['zone2']">
             No2 Drag This Or Drop in here
         </div>
@@ -76,15 +62,11 @@
 
     <mat-tab>
       <ng-template mat-tab-label>     
-        <!-- <div draggable="true"
-          (dragstart)="onDragStart($event)"
-          (dragover)="allowDrop($event)"
-        
-          > -->
+   
         <div 
              [tabDroppabled]="'No.3'"             
              [zoneName]="'zone3'"
-             (tabDrop)="onTab2Drop($event)">
+             (onDrop)="onTab2Drop($event)">
           Drop in here
         </div>
       </ng-template>
@@ -97,4 +79,4 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-
+ -->

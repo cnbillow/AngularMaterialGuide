@@ -6,11 +6,13 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HostInfoComponent } from './host-info/host-info.component';
 import { SendInfoComponent } from './send-info/send-info.component';
+import { GroupComponent } from './group/group.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: 'home', component : HomeComponent },
   {path: 'dashboard', component : DashboardComponent },
+  {path: 'group', component : GroupComponent },
   {path: 'hostinfo', component : HostInfoComponent},
   {path: 'sendinfo', component : SendInfoComponent}
 ];

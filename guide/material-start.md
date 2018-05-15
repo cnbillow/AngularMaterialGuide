@@ -8,11 +8,16 @@
 ```bash
 npm install --save @angular/material @angular/cdk
 ```
-**注意** 2018/5/1の時点で、`@angular/material@6`をリリースして、Issueにほかのパッケージを更新していないため、ビルド通れない状況を発生しますので、安定版のV5.2.5をインストールしてください。
+**V5.2.5版について** 2018/5/1の時点で、`@angular/material@6`をリリースして、Issueにほかのパッケージを更新していないため、ビルド通れない状況を発生しますので、安定版のV5.2.5をインストールしてください。
 ```bash
 npm install --save @angular/material@5.2.5 @angular/cdk
 ```
 
+**V6.0.0版について**
+後程
+
+**V5⇒V6の手順**
+後程
 
 
 #### あるいは: スナップショット版をインストール
